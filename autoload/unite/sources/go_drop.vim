@@ -2,10 +2,10 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 if !exists("g:godrop_command")
-  if exists(":GoDrop")
-    g:godrop_command = "GoDrop"
-  else
+  if exists(":Drop")
     g:godrop_command = "Drop"
+  else
+    g:godrop_command = "GoDrop"
   endif
 endif
 

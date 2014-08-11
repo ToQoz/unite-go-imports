@@ -2,10 +2,10 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 if !exists("g:goimport_command")
-  if exists(":GoImport")
-    g:goimport_command = "GoImport"
-  else
+  if exists(":Import")
     g:goimport_command = "Import"
+  else
+    g:goimport_command = "GoImport"
   endif
 endif
 

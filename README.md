@@ -19,11 +19,27 @@ Add `Bundle 'ToQoz/unite-go-imports'`
 
 ## Configuration
 
-If you want to use custom godrop/goimport command that is not :GoDrop/:GoImport nor :Drop/:Import.
+If you want to use custom godrop/goimport command that is not :Drop/:Import nor :GoDrop/:GoImport.
 
-```
+```vim
 g:godrop_command = "CustomeGoDrop"
 g:goimport_command = "CustomeGoImport"
+```
+
+if you don't define `g:godrop_command`/`goimport_command`, there are defined by this script by following rules
+
+```vim
+if exists(":Import")
+  g:goimport_command = "Import"
+else
+  g:goimport_command = "GoImport"
+endif
+
+if exists(":Drop")
+  g:godrop_command = "Drop"
+else
+  g:godrop_command = "GoDrop"
+endif
 ```
 
 ## Usage
